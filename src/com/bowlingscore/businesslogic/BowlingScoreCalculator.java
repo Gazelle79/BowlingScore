@@ -36,6 +36,24 @@ public class BowlingScoreCalculator
 		return contents.toString();
 	}
 	
+	public int getNumberOfBowlingScores(String fileNameAndPath) throws IOException
+	{
+		int numberOfGames = 0;
+		
+		BufferedReader reader = null;
+		
+			InputStream is = new FileInputStream(fileNameAndPath);
+			reader = new BufferedReader(new InputStreamReader(is));
+			
+			while ((reader.readLine()) != null) 
+			{
+				numberOfGames++;
+			}
+			reader.close();
+		
+		return numberOfGames;
+	}
+	
 	/**
 	 * Calculates scoring per frame. A player has two tries in a frame.
 	 * Both of those scores are recorded and added in an individual frame score. 
@@ -131,7 +149,7 @@ public class BowlingScoreCalculator
 		    finalScore += singleFrameScore;
 		}
 		
-		System.out.println("\n The FINAL score is: " + finalScore);
+		System.out.println("\nFinal score for this game: " + finalScore + "\n");
 		return finalScore;
 	}	
 
@@ -217,7 +235,7 @@ public class BowlingScoreCalculator
 	}
 	
 	/**
-	 * Will write the bowling score to an output file.
+	 * Write ONE bowling score to an output file.
 	 * */
 	public boolean writeBowlingScore(int finalScore, String fileNameAndPath)
 	{
@@ -234,6 +252,39 @@ public class BowlingScoreCalculator
 				
 				FileWriter writer = new FileWriter(businessCardFile);				
 				writer.write("Final bowling score: " + finalScore);
+				writer.close();
+				wasWrittenToFile = true;								
+			} 
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+			}
+		
+		return wasWrittenToFile;
+	}
+	
+	
+	/**
+	 * Write MANY bowling scores to an output file.
+	 * */
+	public boolean writeBowlingScores(int[] finalScores, String fileNameAndPath)
+	{
+		boolean wasWrittenToFile = false;
+
+			try 
+			{
+				File businessCardFile = new File(fileNameAndPath);
+				
+				if(businessCardFile.exists())
+				{
+					businessCardFile.delete();
+				}
+				
+				FileWriter writer = new FileWriter(businessCardFile);
+				for(int i=0; i<= finalScores.length-1; i++)
+				{
+					writer.write("Game " + i + " final score: " + finalScores[i] + "\n");
+				}	
 				writer.close();
 				wasWrittenToFile = true;								
 			} 

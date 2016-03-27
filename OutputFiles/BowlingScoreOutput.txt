@@ -1,1 +1,4 @@
-Final bowling score: 80
+Game 0 final score: 300
+Game 1 final score: 150
+Game 2 final score: 107
+Game 3 final score: 24
