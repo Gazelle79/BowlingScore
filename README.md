@@ -1,5 +1,5 @@
-# BowlingScore
---------------
+# BowlingScore :bowling:
+------------------------
 
 SUMMARY
 -------
@@ -13,6 +13,7 @@ It doesn't have a GUI, either. You run it from a command prompt.
 INPUT
 -----
 Data is read in from:
+
      ../BowlingScore/InputFiles/BowlingScoreData.txt
 
 The user CANNOT specify their own input file path.
@@ -20,19 +21,20 @@ The user CANNOT specify their own input file path.
 
 OUTPUT
 ------
-Output is written to a file: 
+Output is written to: 
+
      ../BowlingScore/OutputFiles/BowlingScoreOutput.txt
 
 
 REQUIREMENTS
 ------------
-Java 1.8.0_181 or higher 
+[x] Java 1.8.0_181 or higher 
 (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 
 OPTIONAL
 --------
-JUnit 4.12 or higher
+[x] JUnit 4.12 or higher
 Specifically for running unit tests. JUnit isn't required, but it's suggested. 
 
 
@@ -52,9 +54,11 @@ TO START
 
 
 <h4>COMPILING the application:</h4>
-javac src/main/com/bowlingscore/businesslogic/BowlingScoreMain.java
+
+    javac src/main/com/bowlingscore/businesslogic/BowlingScoreMain.java
 
 
 <h4>EXECUTING the application:</h4>
-java src/main/com/bowlingscore/businesslogic/BowlingScoreMain
+
+    java src/main/com/bowlingscore/businesslogic/BowlingScoreMain
 
