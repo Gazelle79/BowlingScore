@@ -14,7 +14,7 @@ INPUT
 -----
 Data is read in from:
 
-     ../BowlingScore/InputFiles/BowlingScoreData.txt
+```../BowlingScore/InputFiles/BowlingScoreData.txt```
 
 The user __cannot__ specify their own input file path.
 
@@ -24,7 +24,7 @@ OUTPUT
 ------
 Output is written to: 
 
-     ../BowlingScore/OutputFiles/BowlingScoreOutput.txt
+```../BowlingScore/OutputFiles/BowlingScoreOutput.txt```
 
 
 REQUIREMENTS
@@ -56,10 +56,10 @@ TO START
 
 <h4>COMPILING the application:</h4>
 
-    javac src/main/com/bowlingscore/businesslogic/BowlingScoreMain.java
+```javac src/main/com/bowlingscore/businesslogic/BowlingScoreMain.java```
 
 
 <h4>EXECUTING the application:</h4>
 
-    java src/main/com/bowlingscore/businesslogic/BowlingScoreMain
+```java src/main/com/bowlingscore/businesslogic/BowlingScoreMain```
 
