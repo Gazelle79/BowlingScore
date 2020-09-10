@@ -6,9 +6,9 @@ SUMMARY
 This is a small java application that calculates a bowling score based on a file that's read for input. When data is read from the file, a score is calculated based on each frame. 
 That score is written to a text file.
 
-BowlingScore has no arguments. 
+__BowlingScore doesn't accept arguments.__ 
 
-It doesn't have a GUI, either. You run it from a command prompt.
+__BowlingScore doesn't have a GUI.__ You run it from a command prompt.
 
 INPUT
 -----
@@ -16,7 +16,8 @@ Data is read in from:
 
      ../BowlingScore/InputFiles/BowlingScoreData.txt
 
-The user CANNOT specify their own input file path.
+The user __cannot__ specify their own input file path.
+
 
 
 OUTPUT
@@ -28,13 +29,13 @@ Output is written to:
 
 REQUIREMENTS
 ------------
-[x] Java 1.8.0_181 or higher 
+ - [X] Java 1.8.0_181 or higher 
 (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 
 OPTIONAL
 --------
-[x] JUnit 4.12 or higher
+ - [X] JUnit 4.12 or higher
 Specifically for running unit tests. JUnit isn't required, but it's suggested. 
 
 
