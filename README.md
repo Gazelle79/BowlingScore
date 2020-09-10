@@ -3,8 +3,8 @@
 
 SUMMARY
 -------
-This is a small java application that calculates a bowling score based on a file that's read for input. When data is read from the file, a score is calculated based on each frame. 
-That score is written to a text file.
+A small java application that calculates a bowling score based on an input file. When data is read in, a score is calculated based on each frame. 
+The score is written to a text file.
 
 __BowlingScore doesn't accept arguments.__ 
 
@@ -17,7 +17,6 @@ Data is read in from:
 ```../BowlingScore/InputFiles/BowlingScoreData.txt```
 
 The user __cannot__ specify their own input file path.
-
 
 
 OUTPUT
