@@ -3,8 +3,7 @@
 
 SUMMARY
 -------
-A small java application that calculates a bowling score based on an input file. When data is read in, a score is calculated based on each frame. 
-The score is written to a text file.
+A small java application that calculates a bowling score based on an input file. A score is calculated based on each frame, then written to a text file.
 
 __BowlingScore doesn't accept arguments.__ 
 
@@ -16,7 +15,7 @@ Data is read in from:
 
 ```../BowlingScore/InputFiles/BowlingScoreData.txt```
 
-The user __cannot__ specify their own input file path.
+The user __can't__ specify their own input file path.
 
 
 OUTPUT
@@ -38,13 +37,6 @@ OPTIONAL
 Specifically for running unit tests. JUnit isn't required, but it's suggested. 
 
 
-GETTING STARTED
----------------
-There are two steps to make BowlingScorer work:
- - Compile the application
- - Execute the application
-
-
 TO START
 --------
  - Open a command prompt in Linux or Windows.
@@ -53,12 +45,12 @@ TO START
  - Execute the application.
 
 
-<h4>COMPILING the application:</h4>
+<h4>COMPILE:</h4>
 
 ```javac src/main/com/bowlingscore/businesslogic/BowlingScoreMain.java```
 
 
-<h4>EXECUTING the application:</h4>
+<h4>EXECUTE:</h4>
 
 ```java src/main/com/bowlingscore/businesslogic/BowlingScoreMain```
 
