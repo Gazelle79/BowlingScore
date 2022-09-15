@@ -28,6 +28,12 @@ public class Frame implements IFrame
 	public int getFrameNumber() {
 		return this.frameNumber;
 	}
+	public int getFirstRoll() {
+		return this.firstRoll;
+	}
+	public int getSecondRoll() {
+		return this.secondRoll;
+	}
 	
 	
 	//Standard or spare
