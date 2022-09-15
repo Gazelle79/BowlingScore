@@ -2,7 +2,7 @@ package com.bowlingscore.businesslogic;
 
 import java.io.*;
 
-public class BowlingScoreCalculator 
+public class ScoreCalculator
 {	
 	private final int maxFrames = 10;
 	private final int maxTriesPerFrame = 2;
@@ -11,7 +11,7 @@ public class BowlingScoreCalculator
 	    X = STRIKE (10 + total number of pins knocked down in next two rolls, on next turn)
 		- = MISS (0)
 		[/] = SPARE (10 + total number of pins knocked down in next roll, on next turn)
-		[0-9] = Total number of pins knocked down on this turn
+	 	[0-9] = STANDARD Total number of pins knocked down on this turn
 	 **/
 	
 	/**

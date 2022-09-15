@@ -22,7 +22,7 @@ public class BowlingScoreMain
 			outputFileNameAndPath = args[1];
 		}
 		
-		BowlingScoreCalculator parser = new BowlingScoreCalculator();
+		ScoreCalculator parser = new ScoreCalculator();
 		
 		
 		try
