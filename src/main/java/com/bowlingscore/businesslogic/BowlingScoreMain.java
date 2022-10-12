@@ -34,10 +34,10 @@ public class BowlingScoreMain
 			//Read the bowling score in. (Assume it's always valid)
 			//Calculate the score.
 			//Write that score to a text file.
-			rawBowlingScores = parser.readBowlingScore(inputFileNameAndPath).split("\n");
+			rawBowlingScores = parser.readBowlingScores(inputFileNameAndPath);
 			
 			
-			for(int i=0; i<bowlingScoreCount; i++)
+			for(int i=0; i< rawBowlingScores.length; i++)
 			{
 				bowlingScores[i] = parser.calculateBowlingScore(rawBowlingScores[i]);
 			}

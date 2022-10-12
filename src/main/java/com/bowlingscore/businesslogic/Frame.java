@@ -17,7 +17,7 @@ public class Frame implements IFrame
 	
 	private int frameScore;  //Score for this frame.
 	private int frameNumber;  //Frame 2 of 10, frame 6 of 10,etc.
-	private FrameType frameType; //Strike, Spare, Miss, etc.
+	private FrameType frameType = FrameType.MISS; //Strike, Spare, Miss, etc.
 
 	public int getFrameScore() {
 		return this.frameScore;

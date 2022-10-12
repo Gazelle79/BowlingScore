@@ -15,14 +15,20 @@ public class ScoreCalculator
 	 **/
 	
 	/**
-	 * Reads a bowling score from a text file.
+	 *
 	 * */
-	public String readBowlingScore(String fileNameAndPath) throws IOException
+
+	/**
+	 Reads a bowling score from a text file.
+	 @param fileNameAndPath The filename and path to the file that contains all bowling scores.
+	 @return A String of all bowling scores, separated by a newline (\n).
+	 */
+	public String[] readBowlingScores(String fileNameAndPath) throws IOException
 	{
 		BufferedReader reader = null;
 		String bowlingScoreText = null;
 		StringBuilder contents = new StringBuilder();
-				
+
 			/*Not put in try / catch statement so error could be sent back to method caller.*/
 			InputStream is = new FileInputStream(fileNameAndPath);
 			reader = new BufferedReader(new InputStreamReader(is));
@@ -33,31 +39,39 @@ public class ScoreCalculator
 			}
 			reader.close();
 				
-		return contents.toString();
+		return contents.toString().split("\n");
 	}
-	
+
+	/**
+	 Gets the count of bowling scores read from a text file.
+	 @param fileNameAndPath The filename and path to the file that contains all bowling scores.
+	 @return A String of all bowling scores, separated by a newline (\n).
+	 */
 	public int getNumberOfBowlingScores(String fileNameAndPath) throws IOException
 	{
 		int numberOfGames = 0;
 		
 		BufferedReader reader = null;
-		
-			InputStream is = new FileInputStream(fileNameAndPath);
-			reader = new BufferedReader(new InputStreamReader(is));
+		InputStream is = new FileInputStream(fileNameAndPath);
+		reader = new BufferedReader(new InputStreamReader(is));
 			
-			while ((reader.readLine()) != null) 
-			{
-				numberOfGames++;
-			}
-			reader.close();
+		while ((reader.readLine()) != null)
+		{
+			numberOfGames++;
+		}
+		reader.close();
 		
 		return numberOfGames;
 	}
-	
+
+
 	/**
-	 * Calculates scoring per frame. A player has two tries in a frame.
-	 * Both of those scores are recorded and added in an individual frame score. 
-	 * */
+	 Calculates the score for one game. A game has ten frames. Each frame consists of two tries.
+	 Scores from both tries are recorded and added in a single frame.
+
+	 @param rawBowlingScore A bowling score for one game, expressed as characters from a text file.
+	 @return The actual score for this game, as an integer.
+	 */
 	public int calculateBowlingScore(String rawBowlingScore)
 	{				
 		int[] frames = new int[maxFrames]; //Allocates an array of 10 frames.
@@ -151,12 +165,15 @@ public class ScoreCalculator
 		
 		System.out.println("\nFinal score for this game: " + finalScore + "\n");
 		return finalScore;
-	}	
+	}
 
-	
+
 	/**
-	 * Returns the score a user got on his first or second roll in a frame. 
-	 * */
+	 Returns the score, for a first or second roll, as an integer. The score for two rolls is stored in a frame.
+
+	 @param charToTranslate A single character from a raw bowling score.
+	 @return The actual score for this roll, as an integer.
+	 */
 	private int getRollScore(char charToTranslate)
 	{
 		int rollScore = 0;
@@ -183,16 +200,19 @@ public class ScoreCalculator
 		
 		return rollScore;
 	}
-	
+
 	/**
-	 * Sees is the character read from the bowling string unput is numeric [0-9].
-	 * */
-	private boolean isNumeric(char str)  
+	 Returns true if a character from a raw bowling score is numeric. Otherwise, false.
+
+	 @param score A single character from a raw bowling score.
+	 @return The actual score for this roll, as an integer.
+	 */
+	private boolean isNumeric(char score)
 	{ 
 		boolean isNumeric = false;
 		try  
 		{  
-			int character = Integer.parseInt(Character.toString(str));
+			int character = Integer.parseInt(Character.toString(score));
 			isNumeric = true;
 		}  
 		catch(NumberFormatException e)  
@@ -201,12 +221,14 @@ public class ScoreCalculator
 		}  
 	  return isNumeric;  
 	}
-	
+
 	/**
-	 * Returns the ACTUAL number of frames in a bowling input stream. 
-	 * Accounts for ANY combination of strikes, spares, misses, etc.
-	 * Thought I would need this method, but I won't.
-	 * */
+	 Returns the actual number of frames in a raw bowling score. Accounts for any number of strikes,
+	 spares, etc. in case some idiot user wants to make a game with more than 10 frames.
+
+	 @param rawBowlingScore A String represent a single game, as a String of characters from a text file.
+	 @return The number of frames in this game, as an integer.
+	 */
 	private int getFrameCount(String rawBowlingScore)
 	{
 		int frameCount = 0;
@@ -233,10 +255,14 @@ public class ScoreCalculator
 		
 		return frameCount;
 	}
-	
+
 	/**
-	 * Write ONE bowling score to an output file.
-	 * */
+	 Writes a single bowling score to the console and a text file, as output.
+
+	 @param fileNameAndPath A filename and path to write a text file to, containing the score.
+	 @param finalScore The final score for this game. All the scores are added from all the frames.
+	 @return True, if the final score was successfully written to the text file. Otherwise, false.
+	 */
 	public boolean writeBowlingScore(int finalScore, String fileNameAndPath)
 	{
 		boolean wasWrittenToFile = false;
@@ -262,11 +288,15 @@ public class ScoreCalculator
 		
 		return wasWrittenToFile;
 	}
-	
-	
+
+
 	/**
-	 * Write MANY bowling scores to an output file.
-	 * */
+	 Writes many bowling scores to the console and a text file, as output.
+
+	 @param fileNameAndPath A filename and path to write a text file to, containing the score.
+	 @param finalScores The final score for these games. All the scores are added from all the frames.
+	 @return True, if the final score was successfully written to the text file. Otherwise, false.
+	 */
 	public boolean writeBowlingScores(int[] finalScores, String fileNameAndPath)
 	{
 		boolean wasWrittenToFile = false;
